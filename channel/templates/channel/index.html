@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{% static 'channel/css/old_main.css' %}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Sunset as a Service</title>
+      <style>
+        .page-background {
+          padding: 0;
+          margin: 0;
+          background-size:100%;
+          background: url(/static/img/landing.jpg) no-repeat center center;
+          background-size: cover;
+          height: 100vh;
+        }
+        .cta {
+            position: relative;
+            top: 35%;
+            transform: translateY(-35%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5rem;
+        }
+      </style>
+  </head>
+  <body style = "margin: 0">
+    <div class="page-background">
+          <div class="cta container rounded text-center text-white">
+            <h1>Sunsets as a Service</h1>
+            <p class="lead p-3">
+                Deliver rich, brilliant experiences with the world's first sunset service, coming soon.
+            </p>
+            <form class="form-inline justify-content-center" name = "form" action = "{% url 'home' %}"
+               method = "POST" >{% csrf_token %}
+              <input type="text" name="link" class="form-control form-control-lg mr-2" placeholder="Enter your channel name...">
+              <button type="submit" class="btn btn-lg btn-primary">Sign up</button>
+            </form>
+          </div>
+      </div>
+  </body>
+</html>

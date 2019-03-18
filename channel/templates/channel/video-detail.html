@@ -1,0 +1,12 @@
+{% extends "channel/base2.html" %}
+  {% block content %}
+  <h2 style="margin:40px">Negative Comments</h2>
+  {% for top_worst_comments in comment_output %}
+    {% for comment in top_worst_comments%}
+      <div class="container-fluid">
+        <div class="box e">{{comment}}</div>
+      </div>
+
+    {% endfor %}
+  {% endfor %}
+{% endblock content %}
