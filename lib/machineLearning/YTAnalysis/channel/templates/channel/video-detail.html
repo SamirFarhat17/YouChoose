@@ -1,0 +1,17 @@
+{% extends "channel/base2.html" %}
+  {% block content %}
+  <h1 style="margin:20px; margin-bottom:20px">Negative Comments</h1>
+    {% for cnp in context%}
+      <article class="media content-section">
+        <img src={{cnp.2}} alt="Thumbnail" style = "padding: 10px; width: 8%; height: 8%; overflow: auto; border-radius: 50%">
+        <div class="media-body">
+          <div class="article-metadata">
+          </div>
+          <h2>{{ cnp.1 }} </h2>
+          <p class="article-content">{{ cnp.0 }}</p>
+        </div>
+      </article>
+      <br>
+
+    {% endfor %}
+{% endblock content %}
